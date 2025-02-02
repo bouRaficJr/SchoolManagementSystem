@@ -1,0 +1,93 @@
+Create Database SchoolSysDB
+
+
+Use SchoolSysDB
+
+
+create Table Class(
+ClassId int primary key identity(1,1) not null,
+ClassName varchar(50) null 
+)
+
+
+create Table Subject (
+SubjectId int primary key identity(1,1) not null ,
+ClassId int foreign key references Class(ClassId) null,
+SubjectName varchar(50) null
+)
+
+
+Create Table  Student (
+StudentId int primary key identity(1,1) not null,
+Name varchar(50) null,
+DOB date null,
+Gender varchar(50) null ,
+Mobile  bigint null,
+RollNo varchar(50) null,
+Address varchar(max) null,
+ClassId int foreign key references Class(ClassId) null 
+)
+
+
+Create Table Teacher(
+TeacherId int primary key identity(1,1) not null,
+Name varchar(50) null,
+DOB date null,
+Gender varchar(50) null ,
+Mobile  bigint null,
+Email varchar(50) null,
+Address varchar(max) null,
+password varchar(20) null
+)
+
+
+Create Table TeacherSubject(
+Id int primary key  identity(1,1) not null,
+ClassId int foreign key references Class(ClassId) null ,
+SubjectId int foreign key references Subject(subjectId) null ,
+TeacherId int foreign key references Teacher(TeacherId) null
+) 
+
+
+Create Table TeacherAttendance(
+Id int primary key identity(1,1) not null,
+TeacherId int foreign key references Teacher(TeacherID) not null,
+Status bit  null,
+Date date null
+)
+
+
+Create Table StudentAttendance(
+Id int primary key identity(1,1) not null,
+ClassId int foreign key references Class(ClassId) null ,
+SubjectId int foreign key references Subject(subjectId) null ,
+RollNo varchar(20) null,
+Status bit  null,
+Date date null
+)
+
+
+Create Table Fees(
+FeesId int primary key identity(1,1) not null,
+ClassId int foreign key references Class(ClassId) null ,
+FeesAmount int null
+)
+
+
+Create Table Exam(
+ExamId int primary key identity(1,1) not null,
+ClassId int foreign key references Class(ClassId) null ,
+SubjectId int foreign key references Subject(subjectId) null ,
+RollNo varchar(20) null,
+TotalMarks int null,
+OutOfMarks int null
+)
+
+
+Create Table Expense(
+ExpenseId int primary key identity(1,1) not null,
+ClassId int foreign key references Class(ClassId) null ,
+SubjectId int foreign key references Subject(subjectId) null ,
+ChargeAmount int null
+)
+
