@@ -16,7 +16,7 @@
 
 
     <script>
-        $(document).ready(functipn(){
+        $(document).ready(function(){
             $(".siderbar_menu li").click(function () {
                 $(".siderbar_menu li").removeClass("active");
                 $(this).addClass("active");
@@ -37,9 +37,12 @@
 
        <div class="wrapper">
            <div class="sidebar">
+               <div class="bg_shadow"></div>    
                <div class="sidebar_inner">
                      <div class="close">
+                         <i class="fas fa-times"></i>
                           </div>
+
                    <div class="profile_info">
                        <div class="profile_img">
                            <img src="../Image/logo.jpg" alt="profile_img">
@@ -62,7 +65,7 @@
                                    <div class =" icon"><i class="fas fa-hotel"></i></div>
                                    <div class="title">Class</div>
                                    <div class="arrow"><i class="fas fa-chevron-down"></i></div>
-                               </div>
+                               
                                 </a>
                                 <ul claass="accordion">
                                     <li><a href="../Admin/AddClass.aspx" class="active"><i class="fas fa-user-plus pr-1"></i>Add Class</a>                      
@@ -114,7 +117,7 @@
                               <li>
                                   <a href="../Admin/Marks.aspx"class="active"><i class="fas fa-notes-medical pr-1"></i>Add Marks</a></li>
                               <li> 
-                                  <a href="../Admin/MarkDatails.aspx" class="active"><i class="fas fa-clipboard-check pr-1"></i>Marks Details</a></li</a>
+                                  <a href="../Admin/MarkDatails.aspx" class="active"><i class="fas fa-clipboard-check pr-1"></i>Marks Details</a></li>
                           </ul>
 
                       </li>
@@ -134,7 +137,8 @@
                        </li>
                    </ul>
                  <div class="logout_btn">
-                     <asp:LinkButton ID="btnLogOut" runat="server" CausesValidation="False" OnClick="btnLogOut_Click">Logout</asp:LinkButton>
+                     <asp:LinkButton ID="btnLogOut" runat="server" 
+                         CausesValidation="False"> Logout</asp:LinkButton>
                  </div>
                </div>
            </div>
@@ -153,6 +157,7 @@
   
         </div>
         </div>
+        
 
     </form>
 </body>
