@@ -10,10 +10,11 @@ using static SchoolManagementSystem.Models.CommonFn;
 namespace SchoolManagementSystem.Admin
 {
 
-    CommonFnx fn = new CommonFnx();
-
     public partial class Subject : System.Web.UI.Page
     {
+
+        CommonFnx fn = new CommonFnx();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
