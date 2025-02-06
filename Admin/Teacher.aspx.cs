@@ -100,7 +100,7 @@ namespace SchoolManagementSystem.Admin
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
             }
         }
-        protected void Gridview1_RowEditing(object sender, GridViewUpdateEventArgs e)
+        protected void Gridview1_RowEditing(object sender, GridViewEditEventArgs e)
         {
 
             GridView1.EditIndex = e.NewEditIndex;
